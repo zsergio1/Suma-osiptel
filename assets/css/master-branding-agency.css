@@ -5637,7 +5637,8 @@ section {
   visibility: visible;
 }
 .main-menu li {
-  position: relative;
+  justify-content: space-between;
+
 }
 .main-menu li a {
   display: flex;
@@ -5646,7 +5647,7 @@ section {
   font-size: 16px;
   line-height: 1;
   color: var(--primary);
-  padding: 37px 15px;
+  padding: 15px 25px;
   text-transform: uppercase;
 }
 .main-menu ul.dp-menu {
@@ -7534,12 +7535,13 @@ section {
   }
 }
 .header-area {
-  position: absolute;
+  position: fixed;
   top: 0;
   inset-inline-start: 0;
   inset-inline-end: 0;
   width: 100%;
   background-color: #30A8E0;
+  z-index: 9999;
   
 }
 .header-area.sticky {
@@ -7610,6 +7612,7 @@ section {
 }
 .main-menu li a {
   color: var(--white);
+  padding: 37px 25px;
 }
 .footer-area {
   background-color:#096fb7;
@@ -7834,6 +7837,7 @@ section {
   position: relative;
   z-index: 1;
   padding-bottom: 130px;
+  padding-top: 100px;
 }
 
 .hero-area-inner {
@@ -8235,47 +8239,101 @@ section {
   }
 }
 
-.work-box:hover .thumb:before {
-  top: -2px;
+/* Gallery Slider Styles */
+.gallery-slider {
+  position: relative;
+  padding: 20px 0 60px;
 }
-.work-box:hover .thumb::after {
-  bottom: -2px;
+
+.gallery-slider .swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
 }
-.work-box:hover .thumb img {
+
+/* Navegación del carrusel */
+.gallery-next,
+.gallery-prev {
+  width: 50px;
+  height: 50px;
+  background-color: #FF7F00;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-next:hover,
+.gallery-prev:hover {
+  background-color: #F7941D;
   transform: scale(1.1);
 }
+
+.gallery-next::after,
+.gallery-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Paginación del carrusel */
+.gallery-pagination {
+  bottom: 10px !important;
+}
+
+.gallery-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.gallery-pagination .swiper-pagination-bullet-active {
+  background-color: #FF7F00;
+  width: 30px;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 767px) {
+  .gallery-next,
+  .gallery-prev {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .gallery-next::after,
+  .gallery-prev::after {
+    font-size: 16px;
+  }
+}
+
+/* Estilos limpios para las imágenes de galería */
 .work-box .thumb {
   border-radius: 20px;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
-.work-box .thumb:before {
-  position: absolute;
-  content: url(../imgs/shape/img-s-95.webp);
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -60px;
-  transition: all 0.5s;
+
+.work-box .thumb:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  /*transform: translateY(-5px);*/
 }
-.dark .work-box .thumb:before {
-  content: url(../imgs/shape/img-s-95-dark.webp);
-}
-.work-box .thumb::after {
-  position: absolute;
-  content: url(../imgs/shape/img-s-94.webp);
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -60px;
-  transition: all 0.5s;
-}
-.dark .work-box .thumb::after {
-  content: url(../imgs/shape/img-s-94-dark.webp);
-}
+
 .work-box .thumb img {
   width: 100%;
-  transition: all 0.5s;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.work-box:hover .thumb img {
+  filter: brightness(0.95);
 }
 
 
@@ -8290,48 +8348,6 @@ section {
     .gallery-text {
         font-size: 16px;
     }
-}
-.work-box:hover .thumb:before {
-  top: -2px;
-}
-.work-box:hover .thumb::after {
-  bottom: -2px;
-}
-.work-box:hover .thumb img {
-  transform: scale(1.1);
-}
-.work-box .thumb {
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-}
-.work-box .thumb:before {
-  position: absolute;
-  content: url(../imgs/shape/img-s-95.webp);
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -60px;
-  transition: all 0.5s;
-}
-.dark .work-box .thumb:before {
-  content: url(../imgs/shape/img-s-95-dark.webp);
-}
-.work-box .thumb::after {
-  position: absolute;
-  content: url(../imgs/shape/img-s-94.webp);
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -60px;
-  transition: all 0.5s;
-}
-.dark .work-box .thumb::after {
-  content: url(../imgs/shape/img-s-94-dark.webp);
-}
-.work-box .thumb img {
-  width: 100%;
-  transition: all 0.5s;
 }
 .work-box .content {
   margin-top: 28px;

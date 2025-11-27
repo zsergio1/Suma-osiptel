@@ -777,39 +777,49 @@
                 </div>
 
                 <div class="works-wrapper-box">
-                  <div class="works-wrapper">
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria1.jpeg" alt="work image">
+                  <div class="swiper gallery-slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria1.jpeg" alt="Galería Osiptel 1">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria2.jpeg" alt="Galería Osiptel 2">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria3.jpeg" alt="Galería Osiptel 3">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria4.jpeg" alt="Galería Osiptel 4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria5.jpeg" alt="Galería Osiptel 5">
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria2.jpeg" alt="work image">
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria3.jpeg" alt="work image">
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria4.jpeg" alt="work image">
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria5.jpeg" alt="work image">
-                      </div>
-                    </div>
-                    <!-- 
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria6.jpg" alt="work image">
-                      </div>
-                    </div>
-                    -->
+                    <!-- Navegación -->
+                    <div class="swiper-button-next gallery-next"></div>
+                    <div class="swiper-button-prev gallery-prev"></div>
+                    <!-- Paginación -->
+                    <div class="swiper-pagination gallery-pagination"></div>
                   </div>
                 </div>
 
@@ -961,6 +971,49 @@
           },
           1441: {
             slidesPerView: 2,
+          },
+        }
+      });
+    }
+
+    // gallery slider
+    if (('.gallery-slider').length) {
+      var gallery_slider = new Swiper(".gallery-slider", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 1500,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          prevEl: ".gallery-prev",
+          nextEl: ".gallery-next",
+        },
+        pagination: {
+          el: ".gallery-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          // when window width is >= px
+          576: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 2,
+          },
+          1201: {
+            slidesPerView: 3,
+          },
+          1367: {
+            slidesPerView: 3,
+          },
+          1441: {
+            slidesPerView: 3,
           },
         }
       });
