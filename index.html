@@ -273,7 +273,7 @@
                         ¿Por qué ser voluntario?
                       </h2>
 
-                      <p class="subtitle-dark">
+                      <p class="subtitle-dark" style="color: #ffffff !important;">
                         Tu compromiso SUMA. Participa como voluntario de Osiptel y convierte tu talento en impacto,
                         crecimiento y oportunidades reales.
                       </p>
@@ -284,60 +284,44 @@
                 <div class="services-wrapper-box">
                   <div class="services-wrapper">
                     <div class="has_fade_anim" data-delay="0.15">
-                      <div class="service-box bg-cyan">
-                        <span class="number"> </span>
+                      <div class="service-box styled-card bg-card-green">
                         <div class="icon">
-                          <img src="assets/imgs/icon/crece-profesionalmente-imagen.png" alt="service icon">
+                          <img src="assets/imgs/icon/growth.png" alt="Crece profesionalmente">
                         </div>
-                        <div class="content">
-                          <h3 class="title">CRECE PROFESIONALMENTE</h3>
-                          <p class="text white-text">Desarrolla habilidades y gana experiencia con expertos. </p>
-                        </div>
+                        <div class="title-box">CRECE PROFESIONALMENTE</div>
+                        <p class="text">Desarrolla habilidades y gana experiencia con expertos.</p>
                       </div>
                     </div>
                     <div class="has_fade_anim" data-delay="0.30">
-                      <div class="service-box bg-purple">
-                        <span class="number"> </span>
+                      <div class="service-box styled-card bg-card-orange">
                         <div class="icon">
-                          <img src="assets/imgs/icon/impulsa-tu-futuro-imagen.png" alt="service icon">
+                          <img src="assets/imgs/icon/cap.png" alt="Impulsa tu futuro académico">
                         </div>
-                        <div class="content">
-                          <h3 class="title">IMPULSA TU<br> FUTURO ACADÉMICO</h3>
-                          <p class="text white-text">Suma puntos para becas y mejora tu perfil universitario. </p>
-                        </div>
+                        <div class="title-box">IMPULSA TU FUTURO ACADÉMICO</div>
+                        <p class="text">Suma puntos para becas y mejora tu perfil universitario.</p>
                       </div>
                     </div>
                     <div class="has_fade_anim" data-delay="0.45">
-                      <div class="service-box bg-orange">
-                        <span class="number"> </span>
+                      <div class="service-box styled-card bg-card-blue">
                         <div class="icon">
-                          <img src="assets/imgs/icon/conexiones-y-oportunidades-imagen.png" alt="service icon">
+                          <img src="assets/imgs/icon/world-care.png" alt="Conexiones y oportunidades">
                         </div>
-                        <div class="content">
-                          <h3 class="title">CONEXIONES Y OPORTUNIDADES</h3>
-                          <p class="text white-text">Accede a redes y programas internacionales exclusivos <br><br><br>
-                          </p>
-                        </div>
+                        <div class="title-box">CONEXIONES Y OPORTUNIDADES</div>
+                        <p class="text">Accede a redes y programas internacionales exclusivos.</p>
                       </div>
                     </div>
-                    <div class="has_fade_anim" data-delay="0.45">
-                      <div class="service-box bg-blue">
-                        <span class="number"> </span>
+                    <div class="has_fade_anim" data-delay="0.60">
+                      <div class="service-box styled-card bg-card-purple">
                         <div class="icon">
-                          <img src="assets/imgs/icon/certificacion-y-reconocimiento-imagen.png" alt="service icon">
+                          <img src="assets/imgs/icon/certificado.png" alt="Certificación y reconocimiento">
                         </div>
-                        <div class="content">
-                          <h3 class="title">CERTIFICACIÓN Y RECONOCIMIENTO</h3>
-                          <p class="text white-text">Obtén certificados que validan tu participación y fortalece tu CV
-                            <br><br>
-                          </p>
-                        </div>
+                        <div class="title-box">CERTIFICACIÓN Y RECONOCIMIENTO</div>
+                        <p class="text">Obtén certificados que validan tu participación y fortalece tu CV.</p>
                       </div>
                     </div>
-
                   </div>
-                </div>
 
+                </div>
               </div>
             </div>
           </section>
@@ -396,10 +380,7 @@
               <div class="process-area-inner section-spacing">
 
                 <!-- Fondo decorativo -->
-                <div class="shape-1 d-none d-lg-block">
-                  <img class="show-light" src="assets/imgs/gallery/img3.png" alt="image"
-                    style="border-radius: 30px; opacity: 0.1;">
-                </div>
+
 
                 <!-- Título -->
                 <div class="section-header text-center mb-5">
@@ -517,13 +498,21 @@
           <script>
             function toggleInfo(id) {
               var el = document.getElementById(id);
-              el.style.display = (el.style.display === "block") ? "none" : "block";
-            if (typeof ScrollTrigger !== "undefined") {
-    setTimeout(() => ScrollTrigger.refresh(), 50);
-  }
+              var button = event.target;
+              
+              // Comportamiento simple para todas las tarjetas
+              if (el.style.display === "block") {
+                el.style.display = "none";
+                button.textContent = "Conoce más";
+              } else {
+                el.style.display = "block";
+                button.textContent = "Ver menos";
+              }
+              
+              if (typeof ScrollTrigger !== "undefined") {
+                setTimeout(() => ScrollTrigger.refresh(), 50);
+              }
             }
-
-
           </script>
 
           <!-- process area end  -->
@@ -801,39 +790,49 @@
                 </div>
 
                 <div class="works-wrapper-box">
-                  <div class="works-wrapper">
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria1.jpeg" alt="work image">
+                  <div class="swiper gallery-slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria1.jpeg" alt="Galería Osiptel 1">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria2.jpeg" alt="Galería Osiptel 2">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria3.jpeg" alt="Galería Osiptel 3">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria4.jpeg" alt="Galería Osiptel 4">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="work-box">
+                          <div class="thumb">
+                            <img src="assets/imgs/gallery/galeria5.jpeg" alt="Galería Osiptel 5">
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria2.jpeg" alt="work image">
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria3.jpeg" alt="work image">
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria4.jpeg" alt="work image">
-                      </div>
-                    </div>
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria5.jpeg" alt="work image">
-                      </div>
-                    </div>
-                    <!-- 
-                    <div class="work-box">
-                      <div class="thumb">
-                        <img src="assets/imgs/gallery/galeria6.jpg" alt="work image">
-                      </div>
-                    </div>
-                    -->
+                    <!-- Navegación -->
+                    <div class="swiper-button-next gallery-next"></div>
+                    <div class="swiper-button-prev gallery-prev"></div>
+                    <!-- Paginación -->
+                    <div class="swiper-pagination gallery-pagination"></div>
                   </div>
                 </div>
 
@@ -985,6 +984,49 @@
           },
           1441: {
             slidesPerView: 2,
+          },
+        }
+      });
+    }
+
+    // gallery slider
+    if (('.gallery-slider').length) {
+      var gallery_slider = new Swiper(".gallery-slider", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 1500,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          prevEl: ".gallery-prev",
+          nextEl: ".gallery-next",
+        },
+        pagination: {
+          el: ".gallery-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          // when window width is >= px
+          576: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 2,
+          },
+          1201: {
+            slidesPerView: 3,
+          },
+          1367: {
+            slidesPerView: 3,
+          },
+          1441: {
+            slidesPerView: 3,
           },
         }
       });
