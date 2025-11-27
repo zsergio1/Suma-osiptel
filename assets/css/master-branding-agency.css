@@ -3699,6 +3699,7 @@ h6 {
 .header-area.sticky button i {
   color: var(--primary);
 }
+
 .modal {
   z-index: 99999;
 }
@@ -7883,7 +7884,7 @@ section {
   object-fit: cover;
 }
 
-/* --- MODIFICADO: Ajustes para alinear título a la derecha --- */
+/* --- : Ajustes para alinear título a la derecha --- */
 .hero-area .section-title {
   font-size: 180px; /* Este tamaño afectaba al texto, pero ahora usas imagen */
   line-height: 0.83;
@@ -7904,6 +7905,18 @@ section {
     right: 0;           /* ¡Esto lo pega al borde derecho absoluto! */
     z-index: 10;        /* Asegura que se vea encima de todo */
 }
+@media only screen and (max-width: 991px) {
+    .logo-borde-derecho {
+        position: relative; /* Ya no flota, entra en el flujo normal */
+        top: auto;
+        right: auto;
+        display: flex;
+        justify-content: center; /* Centrado horizontal */
+        width: 100%;
+        margin-bottom: 30px; /* Espacio debajo del logo */
+        margin-top: 100px;   /* Espacio arriba para que no choque con el menú */
+    }
+  }
 /* --- LÓGICA PARA SUBIR SOLO EN PC --- */
 
 /* 1. En Celulares y Tablets: Margen normal (No sube) */
