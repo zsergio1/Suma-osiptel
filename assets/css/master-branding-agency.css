@@ -9138,7 +9138,7 @@ section {
 }
 
 /* El punto verde personalizado */
-/*.profile-list li::before {
+.profile-list li::before {
     content: '●'; 
     color: #28a745;
     font-size: 24px;
@@ -9146,7 +9146,7 @@ section {
     left: 0;
     top: -2px;
 }
-*/
+
 
 /* --- RESPONSIVE (MÓVILES) --- */
 @media only screen and (max-width: 991px) {
