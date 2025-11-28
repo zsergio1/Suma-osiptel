@@ -3682,6 +3682,7 @@ h6 {
 .pos-abs {
   position: absolute;
 }
+
 .header-area {
   transition: 0.3s;
 }
@@ -3699,6 +3700,7 @@ h6 {
 .header-area.sticky button i {
   color: var(--primary);
 }
+
 
 .modal {
   z-index: 99999;
