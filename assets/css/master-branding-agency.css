@@ -8229,40 +8229,40 @@ section {
 
 /* --- : Ajustes para alinear título a la derecha --- */
 .hero-area .section-title {
-  font-size: 180px; /* Este tamaño afectaba al texto, pero ahora usas imagen */
+  font-size: 180px; 
   line-height: 0.83;
   font-family: "Mogra", system-ui;
   letter-spacing: -0.04em;
-  margin-top: 0; /* Quitamos margen negativo para que la imagen no se corte */
+  margin-top: 0; 
   margin-bottom: 5px;
   color: var(--white);
   text-transform: uppercase;
   font-weight: 400;
-  width: 100%; /* Asegura que ocupe el ancho para alinearse */
-  text-align: right; /* Alinea el contenido (la imagen) a la derecha */
+  width: 100%; 
+  text-align: right; 
 }
 /*mover el logo a la derecha pegado al borde*/
 .logo-borde-derecho {
-    position: absolute; /* Flota sobre todo */
-    top: 140px;         /* Ajusta la altura (bájalo si choca con el menú) */
-    right: 0;           /* ¡Esto lo pega al borde derecho absoluto! */
-    z-index: 10;        /* Asegura que se vea encima de todo */
+    position: absolute; 
+    top: 140px;         
+    right: 0;           
+    z-index: 10;        
 }
 @media only screen and (max-width: 991px) {
     .logo-borde-derecho {
-        position: relative; /* Ya no flota, entra en el flujo normal */
+        position: relative; 
         top: auto;
         right: auto;
         display: flex;
-        justify-content: center; /* Centrado horizontal */
+        justify-content: center; 
         width: 100%;
-        margin-bottom: 30px; /* Espacio debajo del logo */
-        margin-top: 100px;   /* Espacio arriba para que no choque con el menú */
+        margin-bottom: 30px; 
+        margin-top: 100px;   
     }
   }
 /* --- LÓGICA PARA SUBIR SOLO EN PC --- */
 
-/* 1. En Celulares y Tablets: Margen normal (No sube) */
+/* 1. En Celulares y Tablets */
 .subir-solo-pc {
     margin-top: 0px;
 }
@@ -8276,9 +8276,9 @@ section {
 
 /* --- Imagen RESPONSIVE --- */
 .hero-area .section-title img {
-  max-width: 100%; /* La imagen nunca será más ancha que la pantalla (Móvil) */
-  height: auto;    /* Mantiene la proporción */
-  display: inline-block; /* Necesario para que text-align funcione */
+  max-width: 100%; 
+  height: auto;   
+  display: inline-block; 
 }
 
 @media only screen and (max-width: 1919px) {
@@ -9496,10 +9496,10 @@ section {
         gap: 40px;
     }
     .blog-area .profile-grid > div:nth-child(2) {
-        order: 1; /* ¡Tú vas primero! */
+        order: 1; 
     }
     .blog-area .profile-grid > div:nth-child(1) {
-        order: 2; /* ¡Tú vas segundo! */
+        order: 2; 
     }
     
 
