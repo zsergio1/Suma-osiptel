@@ -29,14 +29,14 @@
 /* Extra Large Desktop (1400px+) */
 @media only screen and (min-width: 1400px) {
   .styled-card .title-box {
-    font-size: 22px !important;
+    font-size: 20px !important;
     font-family: var(--font_kanit) !important;
-    letter-spacing: 0.9px !important;
+    letter-spacing: 0.8px !important;
     margin-bottom: 0px !important;
   }
   
   .styled-card .text {
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-family: var(--font_kanit) !important;
     font-weight: 400 !important;
     line-height: 1.6 !important;
@@ -46,14 +46,14 @@
 /* Large Desktop (1200px - 1399px) */
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .styled-card .title-box {
-    font-size: 21px !important;
+    font-size: 19px !important;
     font-family: var(--font_kanit) !important;
-    letter-spacing: 0.8px !important;
+    letter-spacing: 0.7px !important;
     margin-bottom: 0px !important;
   }
   
   .styled-card .text {
-    font-size: 17px !important;
+    font-size: 15px !important;
     font-family: var(--font_kanit) !important;
     font-weight: 400 !important;
   }
@@ -62,14 +62,14 @@
 /* Medium Desktop (992px - 1199px) */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .styled-card .title-box {
-    font-size: 20px !important;
+    font-size: 18px !important;
     font-family: var(--font_kanit) !important;
-    letter-spacing: 0.7px !important;
+    letter-spacing: 0.6px !important;
     margin-bottom: 0px !important;
   }
   
   .styled-card .text {
-    font-size: 16px !important;
+    font-size: 14px !important;
     font-family: var(--font_kanit) !important;
     font-weight: 400 !important;
   }
@@ -78,15 +78,15 @@
 /* Large Tablet (768px - 991px) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .styled-card .title-box {
-    font-size: 19px !important;
+    font-size: 17px !important;
     font-family: var(--font_kanit) !important;
-    letter-spacing: 0.6px !important;
+    letter-spacing: 0.5px !important;
     line-height: 1.2 !important;
     margin-bottom: 0px !important;
   }
   
   .styled-card .text {
-    font-size: 16px !important;
+    font-size: 14px !important;
     font-family: var(--font_kanit) !important;
     font-weight: 400 !important;
     line-height: 1.5 !important;
