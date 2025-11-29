@@ -84,9 +84,16 @@
               <li><a href="#porque" class="scroll-link">¿Por qué elegir SUMA+?</a></li>
               <li><a href="#requisitos" class="scroll-link">Requisitos</a></li>
               <li><a href="#proceso" class="scroll-link">Proceso de inscripción</a></li>
-             
+
             </ul>
           </nav>
+        </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <!-- 
         </div>
         <div class="header__button">
           <div class="wc-btn-group">
@@ -102,9 +109,17 @@
 
           </div>
         </div>
+      -->
 
-      </div>
-    </div>
+         
+        </div>
+         <nav class="mobile-menu" id="mobile-menu">
+            <ul>
+              <li><a href="#porque" class="scroll-link">¿Por qué elegir SUMA+?</a></li>
+              <li><a href="#requisitos" class="scroll-link">Requisitos</a></li>
+              <li><a href="#proceso" class="scroll-link">Proceso de inscripción</a></li>
+            </ul>
+          </nav>
   </header>
   <!-- Header area end -->
 
@@ -122,7 +137,7 @@
           <section class="hero-area section-item">
             <!-- Content Container -->
             <div class="hero-content-wrapper">
-              <img src="assets/imgs/shape/finicio2.png" alt="Hero Background" class="hero-bg-image">
+             <!-- <img src="assets/imgs/shape/finicio2.png" alt="Hero Background" class="hero-bg-image"> --> 
               <div class="container large">
                 <div class="hero-area-inner">
                   <div class="hero-content-right">
@@ -134,18 +149,22 @@
                         <img src="assets/imgs/shape/scambio2.png" alt="Sé parte del cambio" class="cambio-image">
                       </div>
                       <div class="hero-unete-text has_char_anim">
-                        <img src="assets/imgs/shape/unete.png" alt="Únete a nuestro programa de voluntariado" class="unete-image">
+                        <img src="assets/imgs/shape/unete.png" alt="Únete a nuestro programa de voluntariado"
+                          class="unete-image">
                       </div>
                       <!-- Botón de inscripción -->
                       <div class="hero-cta-button">
                         <div class="wc-btn-group">
-                          <a class="wc-btn wc-btn-circle" href="https://sistemasweb.osiptel.gob.pe/CUREXTFront/" target="_blank">
+                          <a class="wc-btn wc-btn-circle" href="https://sistemasweb.osiptel.gob.pe/CUREXTFront/"
+                            target="_blank">
                             <i class="fa-solid fa-arrow-right"></i>
                           </a>
-                          <a class="wc-btn wc-btn-primary" href="https://sistemasweb.osiptel.gob.pe/CUREXTFront/" target="_blank">
+                          <a class="wc-btn wc-btn-primary" href="https://sistemasweb.osiptel.gob.pe/CUREXTFront/"
+                            target="_blank">
                             INSCRÍBETE
                           </a>
-                          <a class="wc-btn wc-btn-circle" href="https://sistemasweb.osiptel.gob.pe/CUREXTFront/" target="_blank">
+                          <a class="wc-btn wc-btn-circle" href="https://sistemasweb.osiptel.gob.pe/CUREXTFront/"
+                            target="_blank">
                             <i class="fa-solid fa-arrow-right"></i>
                           </a>
                         </div>
@@ -328,7 +347,7 @@
                         Proceso de Inscripción
                       </h2>
                       <br><br>
-                      <p>Conoce las etapas y resultados del proceso de selección.</p>
+                      <p >Conoce las etapas y resultados del proceso de selección.</p>
                     </div>
                   </div>
                 </div>
@@ -410,14 +429,14 @@
                             <tr>
                               <td>15/01</td>
                               <td>Examen de Admisión</td>
-                              <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png"
-                                    class="pdf-mini"></a></td>
+                              <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
+                              </td>
                             </tr>
                             <tr>
                               <td>20/01</td>
                               <td>Entrevista Personal</td>
-                              <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png"
-                                    class="pdf-mini"></a></td>
+                              <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -436,7 +455,7 @@
             function toggleInfo(id) {
               var el = document.getElementById(id);
               var button = event.target;
-              
+
               // Comportamiento simple para todas las tarjetas
               if (el.style.display === "block") {
                 el.style.display = "none";
@@ -445,7 +464,7 @@
                 el.style.display = "block";
                 button.textContent = "Ver menos";
               }
-              
+
               if (typeof ScrollTrigger !== "undefined") {
                 setTimeout(() => ScrollTrigger.refresh(), 50);
               }
@@ -757,7 +776,7 @@
                           </div>
                         </div>
                       </div>
-                       <!--
+                      <!--
                       <div class="swiper-slide">
                         <div class="work-box">
                           <div class="thumb">
@@ -766,7 +785,7 @@
                         </div>
                       </div>
                     -->
-                      
+
                     </div>
                     <!-- Navegación -->
                     <div class="swiper-button-next gallery-next"></div>
@@ -1053,6 +1072,27 @@
       });
     });
 
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
+
+      // Cerrar al hacer clic en un enlace
+      document.querySelectorAll("#mobile-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+        });
+      });
+
+    });
   </script>
 
 
