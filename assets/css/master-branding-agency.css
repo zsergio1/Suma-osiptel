@@ -12270,7 +12270,6 @@ section {
   margin-bottom: 0px;
   letter-spacing: 0.8px;
   line-height: 1.2;
-  text-transform: uppercase;
   z-index: 1;
   position: relative;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -12280,9 +12279,9 @@ section {
 }
 
 .styled-card .text {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
   z-index: 1;
   position: relative;
   max-width: 300px;
