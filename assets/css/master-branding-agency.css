@@ -9610,7 +9610,6 @@ section {
 /* Botones y Video */
 .hero-cta-button {
   display: flex;
-  /* CORREGIDO: Se mantiene centrado como indicaba tu código original al final */
   justify-content: center; 
 }
 
@@ -9754,8 +9753,14 @@ section {
 
 /* --- Tablets / Laptops Pequeñas (Max 991px) --- */
 @media only screen and (max-width: 991px) {
+   .hero-area {
+    /* Ajusta la imagen completa al espacio */
+    background-repeat: no-repeat;
+    background-position: -30px; 
+  }
   .hero-content-wrapper {
     min-height: 80vh;
+    
   }
 
   .hero-area-inner {
@@ -9768,9 +9773,11 @@ section {
   }
 
   .hero-content-right {
-    text-align: right;
+    background-color: rgba(255, 255, 255, 0.349); 
+    backdrop-filter: blur(5px);
+    text-align: center;
     padding: 30px 25px;
-    margin-right: 40px;
+    margin-right: 30px;
     max-width: 480px;
   }
 
