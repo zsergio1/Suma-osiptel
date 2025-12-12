@@ -5902,7 +5902,7 @@ section {
 .wc-btn-primary {
   padding: 21px 30px;
   font-weight: 700;
-  font-size: 13px;
+  
   line-height: 1;
   color: var(--white);
   background-color: var(--primary);
@@ -9029,7 +9029,7 @@ section {
 }
 
 .wc-btn-primary {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
   background-color: #003d7a;
@@ -9521,6 +9521,10 @@ section {
   position: relative;
   z-index: 2;
   border-radius: 30px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(135, 206, 250, 0.7) 50%,
+    rgba(0, 114, 188, 0.85) 100%);
   box-shadow: 0 10px 40px rgba(177, 29, 29, 0.1);
   flex-shrink: 0;
   /*background-color: rgba(0, 123, 255, 0.5)*/
@@ -11687,8 +11691,24 @@ section {
 }
 
 /* Estilos para los botones de selección de año */
-.year-selector {
+.year-selector-wrapper {
+  width: 100%;
   display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+  .year-selector-wrapper {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+.year-selector {
+  display: inline-flex;
   gap: 15px;
   justify-content: center;
   align-items: center;
@@ -11718,6 +11738,32 @@ section {
   color: #0072BC;
   border-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación para cambio de año */
+.scale-up-horizontal-center {
+  animation: scale-up-horizontal-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes scale-up-horizontal-center {
+  0% {
+    transform: scaleX(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Transición suave para el contenedor de tarjetas */
+.process-cards-container {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Transición suave para la sección completa */
+.process-wrapper-box {
+  transition: min-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .info-desplegable {

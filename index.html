@@ -81,9 +81,9 @@
         <div class="header__nav pos-center">
           <nav class="main-menu">
             <ul>
-              <li><a href="#porque" class="scroll-link">¿Por qué elegir SUMA+?</a></li>
-              <li><a href="#requisitos" class="scroll-link">Requisitos</a></li>
-              <li><a href="#proceso" class="scroll-link">Proceso de inscripción</a></li>
+              <li><a href="#porque" class="scroll-link">¿Por qué ser Voluntario?</a></li>
+              <li><a href="#requisitos" class="scroll-link">Perfil del Voluntario</a></li>
+              <li><a href="#proceso" class="scroll-link">Proceso de Inscripción</a></li>
 
             </ul>
           </nav>
@@ -115,9 +115,9 @@
       </div>
       <nav class="mobile-menu" id="mobile-menu">
         <ul>
-          <li><a href="#porque" class="scroll-link">¿Por qué elegir SUMA+?</a></li>
-          <li><a href="#requisitos" class="scroll-link">Requisitos</a></li>
-          <li><a href="#proceso" class="scroll-link">Proceso de inscripción</a></li>
+          <li><a href="#porque" class="scroll-link">¿Por qué ser Voluntario?</a></li>
+          <li><a href="#requisitos" class="scroll-link">Perfil del Voluntario</a></li>
+          <li><a href="#proceso" class="scroll-link">Proceso de Inscripción</a></li>
         </ul>
       </nav>
   </header>
@@ -347,15 +347,20 @@
                         style="background-color: #0072BC; color: #fff; display: inline-block; padding: 10px 40px; border-radius: 15px; font-weight: 800; font-size: 36px;">
                         Proceso de Inscripción
                       </h2>
-                      <br><br>
-                      <p  style= "color: #fff">Conoce las etapas y resultados del proceso de selección.</p>
-                      
-                      <!-- Botones de Año -->
-                      <div class="year-selector" style="margin-top: 20px;">
-                        <button class="btn-year active" onclick="changeYear(2025)" id="btn-2025">2025</button>
-                        <button class="btn-year" onclick="changeYear(2026)" id="btn-2026">2026</button>
-                      </div>
                     </div>
+                  </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="section-description text-center">
+                  <p style="color: #fff; margin-bottom: 0;">Conoce las etapas y resultados del proceso de selección.</p>
+                </div>
+
+                <!-- Botones de Año -->
+                <div class="year-selector-wrapper text-center">
+                  <div class="year-selector">
+                    <button class="btn-year active" onclick="changeYear(2025)" id="btn-2025">2025</button>
+                    <button class="btn-year" onclick="changeYear(2026)" id="btn-2026">2026</button>
                   </div>
                 </div>
 
@@ -587,21 +592,85 @@
             }
 
             function changeYear(year) {
+              // Obtener referencias a los contenedores
+              const content2025 = document.getElementById('content-2025');
+              const content2026 = document.getElementById('content-2026');
+              const wrapper = document.querySelector('.process-wrapper-box');
+              
+              // Remover todas las animaciones activas antes de cambiar
+              document.querySelectorAll('.process-card-item').forEach(card => {
+                card.classList.remove('scale-up-horizontal-center');
+                card.style.animation = 'none';
+                card.style.transform = 'none';
+                card.style.opacity = '1';
+              });
+              
+              // Guardar altura actual antes del cambio
+              const currentHeight = wrapper.offsetHeight;
+              wrapper.style.minHeight = currentHeight + 'px';
+              
               // Ocultar todos los contenidos
-              document.getElementById('content-2025').style.display = 'none';
-              document.getElementById('content-2026').style.display = 'none';
+              content2025.style.display = 'none';
+              content2026.style.display = 'none';
               
               // Remover clase active de todos los botones
               document.getElementById('btn-2025').classList.remove('active');
               document.getElementById('btn-2026').classList.remove('active');
               
-              // Mostrar el contenido seleccionado y activar el botón
-              document.getElementById('content-' + year).style.display = 'flex';
+              // Obtener el contenido del año seleccionado
+              const selectedContent = document.getElementById('content-' + year);
+              
+              // Mostrar el contenido (pero invisible para medir)
+              selectedContent.style.display = 'flex';
+              selectedContent.style.opacity = '0';
+              
+              // Activar el botón
               document.getElementById('btn-' + year).classList.add('active');
               
-              // Refrescar ScrollTrigger si está disponible
+              // Calcular nueva altura y aplicar transición
+              requestAnimationFrame(() => {
+                const newHeight = wrapper.offsetHeight;
+                wrapper.style.minHeight = newHeight + 'px';
+                
+                // Pequeño delay para asegurar que el navegador procese el cambio de altura
+                setTimeout(() => {
+                  selectedContent.style.opacity = '1';
+                  
+                  // Aplicar animación a las tarjetas
+                  const cards = selectedContent.querySelectorAll('.process-card-item');
+                  cards.forEach((card, index) => {
+                    // Asegurar estado inicial limpio
+                    card.style.animation = 'none';
+                    card.style.transform = 'scaleX(1)';
+                    card.style.opacity = '1';
+                    
+                    setTimeout(() => {
+                      // Forzar reflow
+                      card.offsetHeight;
+                      // Aplicar animación
+                      card.style.animation = '';
+                      card.classList.add('scale-up-horizontal-center');
+                      
+                      // Limpiar después de la animación
+                      setTimeout(() => {
+                        card.classList.remove('scale-up-horizontal-center');
+                        card.style.animation = 'none';
+                        card.style.transform = 'scaleX(1)';
+                        card.style.opacity = '1';
+                      }, 550);
+                    }, index * 80);
+                  });
+                  
+                  // Limpiar min-height después de todas las animaciones
+                  setTimeout(() => {
+                    wrapper.style.minHeight = '';
+                  }, 450);
+                }, 50);
+              });
+              
+              // Refrescar ScrollTrigger
               if (typeof ScrollTrigger !== "undefined") {
-                setTimeout(() => ScrollTrigger.refresh(), 100);
+                setTimeout(() => ScrollTrigger.refresh(), 700);
               }
             }
           </script>
@@ -1139,47 +1208,6 @@
         },
       });
     }
-    //
-    document.querySelectorAll('.scroll-link').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const id = this.getAttribute('href').substring(1);
-        simulateManualScrollToSection(id);
-      });
-    });
-    //
-
-    function simulateManualScrollToSection(id) {
-      const target = document.getElementById(id);
-      if (!target) return;
-
-      const targetOffset = target.getBoundingClientRect().top + window.pageYOffset;
-      const startPosition = window.pageYOffset;
-      const distance = targetOffset - startPosition;
-      const duration = 700; // duración del scroll en ms
-      const startTime = performance.now();
-
-      function scrollStep(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const ease = progress < 0.5
-          ? 2 * progress * progress
-          : -1 + (4 - 2 * progress) * progress;
-
-        window.scrollTo(0, startPosition + distance * ease);
-
-        if (progress < 1) {
-          requestAnimationFrame(scrollStep);
-        } else {
-          // Al final, refrescamos triggers por si las animaciones no cargaron
-          if (typeof ScrollTrigger !== "undefined") {
-            ScrollTrigger.refresh();
-          }
-        }
-      }
-
-      requestAnimationFrame(scrollStep);
-    }
 
     ///
 
@@ -1241,24 +1269,31 @@
                 const targetElement = document.querySelector(targetId); 
 
                 if (targetElement) {
-                    
-                    if (typeof ScrollSmoother !== 'undefined' && ScrollSmoother.get()) {
-                        ScrollSmoother.get().scrollTo(targetElement, true, 'top top');
-
-                    } else {
-                        //  'instant' para asegurar el salto y evitar el scroll suave nativo que puede ser inconsistente.
-                        targetElement.scrollIntoView({ 
-                            behavior: 'instant',
-                        }); 
-                    }
+                    // Cerrar menú móvil si está abierto
                     const mobileMenu = document.getElementById('mobile-menu');
                     const hamburger = document.getElementById('hamburger');
 
                     if (mobileMenu && hamburger && mobileMenu.classList.contains('active')) {
                         mobileMenu.classList.remove('active'); 
                         hamburger.classList.remove('active');
-                        
                     }
+                    
+                    // Pequeño delay para asegurar que el menú se cierre antes del scroll
+                    setTimeout(() => {
+                        // Usar ScrollSmoother si está disponible (desktop)
+                        if (typeof ScrollSmoother !== 'undefined' && ScrollSmoother.get()) {
+                            const smoother = ScrollSmoother.get();
+                            // Usar el elemento directamente y ajustar offset
+                            smoother.scrollTo(targetElement, true, "top 80px");
+                        } else {
+                            // Fallback: scroll suave nativo (mobile)
+                            const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 100);
                 }
             });
         });
