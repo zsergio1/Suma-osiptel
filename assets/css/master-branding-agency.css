@@ -9521,7 +9521,7 @@ section {
   position: relative;
   z-index: 2;
   border-radius: 30px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(177, 29, 29, 0.1);
   flex-shrink: 0;
   /*background-color: rgba(0, 123, 255, 0.5)*/
 }
@@ -9777,7 +9777,6 @@ section {
   }
 
   .hero-content-right {
-    background-color: rgba(255, 255, 255, 0.349); 
     backdrop-filter: blur(5px);
     text-align: center;
     padding: 30px 25px;
@@ -10448,7 +10447,7 @@ section {
 .service-area {
   /*background-color: var(--black);*/
   background-image: url(../imgs/shape/FONDO_CELESTE_TELECOM.png);
-       background-size: cover; 
+  background-size: cover; 
   background-repeat: no-repeat;
   background-position: center; 
 }
@@ -10701,13 +10700,13 @@ section {
 
 .service-box .text {
   color: var(--white-2);
-  margin-top: 23px;
+  line-height: 1.6;
   text-align: center;
 }
 
 @media only screen and (max-width: 1199px) {
   .service-box .text {
-    margin-top: 18px;
+    
   }
 }
 
@@ -10959,8 +10958,9 @@ section {
 /*suma area
 /* --- ESTILOS SECCIÓN SUMA --- */
 .suma-area {
-  /*background-color: #fff;*/
-   background-image: url(../imgs/shape/FONDO_BLANCO_TELECOM.png); 
+  /*background-color: #fff;
+   background-image: url(../imgs/shape/FONDO_BLANCO.png); */
+  background-color: white;
     background-size: cover; 
   background-repeat: no-repeat;
   background-position: center; 
@@ -11597,6 +11597,7 @@ section {
   gap: 25px;
   flex-wrap: wrap;
   align-items: flex-start;
+  flex-direction: row;
 }
 
 /* CARD */
@@ -11683,6 +11684,40 @@ section {
 .process-card-item:nth-child(3) .btn-conoce-mas:hover {
   background-color: #81c784;
   color: #fff;
+}
+
+/* Estilos para los botones de selección de año */
+.year-selector {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-year {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font_kanit), 'Arial', 'Helvetica', sans-serif;
+}
+
+.btn-year:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-year.active {
+  background-color: #fff;
+  color: #0072BC;
+  border-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .info-desplegable {

@@ -349,39 +349,52 @@
                       </h2>
                       <br><br>
                       <p  style= "color: #fff">Conoce las etapas y resultados del proceso de selección.</p>
+                      
+                      <!-- Botones de Año -->
+                      <div class="year-selector" style="margin-top: 20px;">
+                        <button class="btn-year active" onclick="changeYear(2025)" id="btn-2025">2025</button>
+                        <button class="btn-year" onclick="changeYear(2026)" id="btn-2026">2026</button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <!-- TARJETAS -->
                 <div class="process-wrapper-box">
-                  <div class="process-cards-container">
+                  
+                  <!-- ============================================ -->
+                  <!-- CONTENIDO PARA EL AÑO 2025 -->
+                  <!-- ============================================ -->
+                  <div class="process-cards-container" id="content-2025">
 
-                    <!-- CARD 1 — BASES -->
+                    <!-- CARD 1 — BASES 2025 -->
                     <div class="process-card-item">
                       <div class="icon-box">
                         <img src="assets/imgs/icon/21.png" alt="Bases">
                       </div>
                       <h3 class="card-title">BASES</h3>
-                      <button class="btn-conoce-mas" onclick="toggleInfo('info-bases')">Conoce más</button>
+                      <button class="btn-conoce-mas" onclick="toggleInfo('info-bases-2025')">Conoce más</button>
 
-                      <div id="info-bases" class="info-desplegable">
+                      <div id="info-bases-2025" class="info-desplegable">
+                        <!-- 📄 ACTUALIZAR AQUÍ LOS PDFs DE BASES 2025 -->
                         <div class="pdf-item">
                           <img src="assets/imgs/icon/pdf.png" class="pdf-icon" alt="PDF">
-                          <a href="assets/pdf/peuxxx-bases.pdf" target="_blank">Descargar Bases del Proceso</a>
+                          <a href="assets/pdf/peuxxx-bases.pdf" target="_blank">Descargar Bases del Proceso 2025</a>
                         </div>
+                        <!-- Agregar más PDFs aquí si es necesario -->
                       </div>
                     </div>
 
-                    <!-- CARD 2 — CRONOGRAMA -->
+                    <!-- CARD 2 — CRONOGRAMA 2025 -->
                     <div class="process-card-item">
                       <div class="icon-box">
                         <img src="assets/imgs/icon/22.png" alt="Cronograma">
                       </div>
                       <h3 class="card-title">CRONOGRAMA</h3>
-                      <button class="btn-conoce-mas" onclick="toggleInfo('info-cronograma')">Conoce más</button>
+                      <button class="btn-conoce-mas" onclick="toggleInfo('info-cronograma-2025')">Conoce más</button>
 
-                      <div id="info-cronograma" class="info-desplegable">
+                      <div id="info-cronograma-2025" class="info-desplegable">
+                        <!-- 📅 ACTUALIZAR AQUÍ LA TABLA DE CRONOGRAMA 2025 -->
                         <table class="custom-table">
                           <thead>
                             <tr>
@@ -393,31 +406,33 @@
                           <tbody>
                             <tr>
                               <td>01</td>
-                              <td>Cronograma General</td>
+                              <td>Cronograma General 2025</td>
                               <td><a href="assets/pdf/peuxxx-cronograma.pdf" target="_blank">
                                   <img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
                               </td>
                             </tr>
                             <tr>
                               <td>02</td>
-                              <td>Ampliación de Fechas</td>
+                              <td>Ampliación de Fechas 2025</td>
                               <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
                               </td>
                             </tr>
+                            <!-- Agregar más filas aquí si es necesario -->
                           </tbody>
                         </table>
                       </div>
                     </div>
 
-                    <!-- CARD 3 — RESULTADOS -->
+                    <!-- CARD 3 — RESULTADOS 2025 -->
                     <div class="process-card-item">
                       <div class="icon-box">
                         <img src="assets/imgs/icon/24.png" alt="Resultados">
                       </div>
                       <h3 class="card-title">RESULTADOS</h3>
-                      <button class="btn-conoce-mas" onclick="toggleInfo('info-resultados')">Conoce más</button>
+                      <button class="btn-conoce-mas" onclick="toggleInfo('info-resultados-2025')">Conoce más</button>
 
-                      <div id="info-resultados" class="info-desplegable">
+                      <div id="info-resultados-2025" class="info-desplegable">
+                        <!-- 📊 ACTUALIZAR AQUÍ LA TABLA DE RESULTADOS 2025 -->
                         <table class="custom-table">
                           <thead>
                             <tr>
@@ -429,21 +444,121 @@
                           <tbody>
                             <tr>
                               <td>15/01</td>
-                              <td>Examen de Admisión</td>
+                              <td>Examen de Admisión 2025</td>
                               <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
                               </td>
                             </tr>
                             <tr>
                               <td>20/01</td>
-                              <td>Entrevista Personal</td>
+                              <td>Entrevista Personal 2025</td>
                               <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
                               </td>
                             </tr>
+                            <!-- Agregar más filas aquí si es necesario -->
                           </tbody>
                         </table>
                       </div>
                     </div>
 
+                  </div>
+
+                  <!-- ============================================ -->
+                  <!-- CONTENIDO PARA EL AÑO 2026 -->
+                  <!-- ============================================ -->
+                  <div class="process-cards-container" id="content-2026" style="display: none;">
+
+                    <!-- CARD 1 — BASES 2026 -->
+                    <div class="process-card-item">
+                      <div class="icon-box">
+                        <img src="assets/imgs/icon/21.png" alt="Bases">
+                      </div>
+                      <h3 class="card-title">BASES</h3>
+                      <button class="btn-conoce-mas" onclick="toggleInfo('info-bases-2026')">Conoce más</button>
+
+                      <div id="info-bases-2026" class="info-desplegable">
+                        <!-- 📄 ACTUALIZAR AQUÍ LOS PDFs DE BASES 2026 -->
+                        <div class="pdf-item">
+                          <img src="assets/imgs/icon/pdf.png" class="pdf-icon" alt="PDF">
+                          <a href="assets/pdf/peuxxx-bases-2026.pdf" target="_blank">Descargar Bases del Proceso 2026</a>
+                        </div>
+                        <!-- Agregar más PDFs aquí si es necesario -->
+                      </div>
+                    </div>
+
+                    <!-- CARD 2 — CRONOGRAMA 2026 -->
+                    <div class="process-card-item">
+                      <div class="icon-box">
+                        <img src="assets/imgs/icon/22.png" alt="Cronograma">
+                      </div>
+                      <h3 class="card-title">CRONOGRAMA</h3>
+                      <button class="btn-conoce-mas" onclick="toggleInfo('info-cronograma-2026')">Conoce más</button>
+
+                      <div id="info-cronograma-2026" class="info-desplegable">
+                        <!-- 📅 ACTUALIZAR AQUÍ LA TABLA DE CRONOGRAMA 2026 -->
+                        <table class="custom-table">
+                          <thead>
+                            <tr>
+                              <th>N°</th>
+                              <th>Convocatoria</th>
+                              <th>Descarga</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>01</td>
+                              <td>Cronograma General 2026</td>
+                              <td><a href="assets/pdf/peuxxx-cronograma-2026.pdf" target="_blank">
+                                  <img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>02</td>
+                              <td>Ampliación de Fechas 2026</td>
+                              <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
+                              </td>
+                            </tr>
+                            <!-- Agregar más filas aquí si es necesario -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <!-- CARD 3 — RESULTADOS 2026 -->
+                    <div class="process-card-item">
+                      <div class="icon-box">
+                        <img src="assets/imgs/icon/24.png" alt="Resultados">
+                      </div>
+                      <h3 class="card-title">RESULTADOS</h3>
+                      <button class="btn-conoce-mas" onclick="toggleInfo('info-resultados-2026')">Conoce más</button>
+
+                      <div id="info-resultados-2026" class="info-desplegable">
+                        <!-- 📊 ACTUALIZAR AQUÍ LA TABLA DE RESULTADOS 2026 -->
+                        <table class="custom-table">
+                          <thead>
+                            <tr>
+                              <th>Fecha</th>
+                              <th>Etapa</th>
+                              <th>Resultados</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>15/01</td>
+                              <td>Examen de Admisión 2026</td>
+                              <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>20/01</td>
+                              <td>Entrevista Personal 2026</td>
+                              <td><a href="#" target="_blank"><img src="assets/imgs/icon/pdf.png" class="pdf-mini"></a>
+                              </td>
+                            </tr>
+                            <!-- Agregar más filas aquí si es necesario -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
 
                   </div>
                 </div>
@@ -468,6 +583,25 @@
 
               if (typeof ScrollTrigger !== "undefined") {
                 setTimeout(() => ScrollTrigger.refresh(), 50);
+              }
+            }
+
+            function changeYear(year) {
+              // Ocultar todos los contenidos
+              document.getElementById('content-2025').style.display = 'none';
+              document.getElementById('content-2026').style.display = 'none';
+              
+              // Remover clase active de todos los botones
+              document.getElementById('btn-2025').classList.remove('active');
+              document.getElementById('btn-2026').classList.remove('active');
+              
+              // Mostrar el contenido seleccionado y activar el botón
+              document.getElementById('content-' + year).style.display = 'flex';
+              document.getElementById('btn-' + year).classList.add('active');
+              
+              // Refrescar ScrollTrigger si está disponible
+              if (typeof ScrollTrigger !== "undefined") {
+                setTimeout(() => ScrollTrigger.refresh(), 100);
               }
             }
           </script>
