@@ -10704,13 +10704,13 @@ section {
 
 .service-box .text {
   color: var(--white-2);
-  line-height: 1.6;
+  line-height: 1.1 !important;
   text-align: center;
 }
 
 @media only screen and (max-width: 1199px) {
   .service-box .text {
-    
+    line-height: 1 !important;
   }
 }
 
@@ -11690,7 +11690,7 @@ section {
   color: #fff;
 }
 
-/* Estilos para los botones de selección de año */
+/* Estilos para los selectores de año y voluntariado */
 .year-selector-wrapper {
   width: 100%;
   display: flex;
@@ -11709,35 +11709,75 @@ section {
 
 .year-selector {
   display: inline-flex;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.btn-year {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
+/* Estilos para los dropdowns */
+.dropdown-year,
+.dropdown-voluntariado {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #0072BC;
   border: 2px solid #fff;
-  padding: 10px 30px;
+  padding: 12px 30px;
+  padding-right: 45px;
   border-radius: 25px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: var(--font_kanit), 'Arial', 'Helvetica', sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230072BC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.btn-year:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-year.active {
+.dropdown-year:hover,
+.dropdown-voluntariado:hover {
   background-color: #fff;
-  color: #0072BC;
-  border-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-year:focus,
+.dropdown-voluntariado:focus {
+  outline: none;
+  border-color: #0072BC;
+  box-shadow: 0 0 0 3px rgba(0, 114, 188, 0.2);
+}
+
+/* Ancho específico para cada dropdown */
+.dropdown-year {
+  min-width: 120px;
+}
+
+.dropdown-voluntariado {
+  min-width: 220px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+  .year-selector {
+    gap: 15px;
+  }
+  
+  .dropdown-year,
+  .dropdown-voluntariado {
+    font-size: 14px;
+    padding: 10px 25px;
+    padding-right: 40px;
+  }
+  
+  .dropdown-voluntariado {
+    min-width: 200px;
+  }
 }
 
 /* Animación para cambio de año */
@@ -12475,6 +12515,7 @@ section {
   .styled-card .text {
     font-size: 16px;
     font-family: 'Arial', 'Helvetica', sans-serif;
+    line-height: 0.8 !important;
   }
 }
 
